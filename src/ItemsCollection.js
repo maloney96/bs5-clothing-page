@@ -19,4 +19,4 @@ let shoes_json = {'Cream Yeezys': 'https://cdn.shopify.com/s/files/1/0255/9429/8
 ,'Adidas Boost Slides': 'https://assets.adidas.com/images/w_600,f_auto,q_auto/223ea2b54c5842cfb94fac0800eca4ea_9366/Adilette_Boost_Slides_White_FY8155_06_standard.jpg'
 }
 
-export {hats_json, shirts_json, pants_json, shoes_json}
+export {hats_json, shirts_json, pants_json, shoes_json};

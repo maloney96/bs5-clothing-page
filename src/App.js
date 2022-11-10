@@ -2,6 +2,7 @@ import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import RecoFooter from './Recommend';
 import ClothOptions from './ClothOptions';
+import WeatherForm from './Weather';
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
         Clothing Recommender
       </p>
       </header>
+      <WeatherForm></WeatherForm>
       <main>
       <ClothOptions></ClothOptions>
       <RecoFooter></RecoFooter>

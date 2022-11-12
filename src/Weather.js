@@ -1,42 +1,36 @@
-import React from "react";
-// import fetch from 'node-fetch';
-
-let initialFormData = Object.freeze({
-    address : ""
-  });
+import React, { useEffect, useState } from "react";
+import {round} from 'mathjs';
 
 const WeatherForm = () => {
-    const [formData, updateFormData] = React.useState(initialFormData);
+    const [weather, setWeather] = useState('None.. please enter');
   
-    const handleChange = (e) => {
-      updateFormData({
-        ...formData,
-  
-        // Trimming any whitespace
-        [e.target.name]: e.target.value.trim()
-      });
-    };
-  
+    useEffect(() => {
+      console.log('Tomorrow the weather is: ', weather);
+    }, [weather]);
+ 
     const handleSubmit = async (e) => {
-      e.preventDefault()
-      console.log(formData['New Address']);
-      // Submit to partner's microservice 
-      let address = encodeURIComponent(formData['New Address']);
-      let response = await fetch(`http://localhost:3000/?addressString=${address}`);
+      let userAddress = document.getElementById('userAddress')
+      console.log(userAddress.value)
+      let address = encodeURIComponent(userAddress.value);
+      let response = await fetch(`http://localhost:3001/?addressString=${address}`);
       let data = await response.json();
-    //   let todays_weather = list.0
-    // Need to get just tomorrow's weather (0 index?)
       console.log(data)
+    // Need to get just tomorrow's weather (0 index)
+      let kelv_temp = data.list[0].main.temp
+      let far_temp = round(1.8*(kelv_temp-273) + 32)
+      setWeather(far_temp);
     };
   
     return (
       <>
         <label>
+        <p>Please Enter your address in the following format.. (Zip Code is optional)<br></br> <em> CITY, STATE ZIP CODE</em></p>
           Address
-          <input name="New Address" onChange={handleChange} />
+           <input name="New Address" id ='userAddress' /> {/*onChange={userWeather} */}
         </label>
         <br />
-        <button onClick={handleSubmit}>Submit</button>
+        <button onClick={handleSubmit} id='addressButton'>Submit</button>
+        <p><b>Temperature: {weather} (°F)</b></p>
       </>
     );
   };

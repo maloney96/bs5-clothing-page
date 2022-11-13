@@ -5,7 +5,7 @@ import Image from 'react-bootstrap/Image';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {hats_json, shirts_json, pants_json, shoes_json } from './ItemsCollection';
+import { hats_json, shirts_json, pants_json, shoes_json } from './ItemsCollection';
 // import './App.css';
 
 function ClothOptions() {
@@ -14,7 +14,7 @@ function ClothOptions() {
         <Row className = "px-2 my-3">
           <Col sm={7}>
             <Image
-              src = {hats_json['Gucci Hat']}
+              src = {hats_json['moderate']['img_url']}
               fluid
               rounded
             />
@@ -31,7 +31,7 @@ function ClothOptions() {
         <Row className = "px-2 my-3">
         <Col sm={7}>
             <Image
-              src = 'https://dummyimage.com/300x200/b4b5ba/101dcf.png'
+              src = {shirts_json['moderate']['img_url']}
               fluid
               rounded
             />
@@ -43,7 +43,7 @@ function ClothOptions() {
         <Row className = "px-2 my-3">
         <Col sm={7}>
             <Image
-              src = 'https://dummyimage.com/300x200/b4b5ba/101dcf.png'
+              src = {pants_json['moderate']['img_url']}
               fluid
               rounded
             />
@@ -55,7 +55,7 @@ function ClothOptions() {
         <Row className = "px-2 my-3">
         <Col sm={7}>
             <Image
-              src = 'https://dummyimage.com/300x200/b4b5ba/101dcf.png'
+              src = {shoes_json['moderate']['img_url']}
               fluid
               rounded
             />

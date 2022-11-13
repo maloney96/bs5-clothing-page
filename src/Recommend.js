@@ -1,10 +1,11 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-function RecoFooter() {
+const Reccomend = (props) => {
+  const weather = props.weather
   return (
     <Card className="text-center">
-      <Card.Header>Weather Summary Here?</Card.Header>
+      <Card.Header>Weather Summary: {weather} (°F)</Card.Header>
       <Card.Body>
         <Card.Title>Recommend</Card.Title>
         <Card.Text>
@@ -17,4 +18,4 @@ function RecoFooter() {
   );
 }
 
-export default RecoFooter;
+export default Reccomend;

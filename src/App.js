@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import RecoFooter from './Recommend';
 import ClothOptions from './ClothOptions';
 import WeatherForm from './Weather';
+import Header from './Header';
+import Reccomend from './Recommend';
 
 function App() {
   return (
@@ -12,10 +14,11 @@ function App() {
         Clothing Recommender
       </p>
       </header>
+      {/* <Header></Header> */}
       <WeatherForm></WeatherForm>
       <main>
       <ClothOptions></ClothOptions>
-      <RecoFooter></RecoFooter>
+      <Reccomend></Reccomend>
       </main>
     </div>
   );

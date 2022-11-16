@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import {round} from 'mathjs';
 import Header from './Header';
-import Reccomend from "./Recommend";
+import Recomend from "./Recommend";
+import ClothOptions from './ClothOptions';
 
 const WeatherForm = () => {
     const [weather, setWeather] = useState('None.. please enter');
@@ -24,21 +25,14 @@ const WeatherForm = () => {
     };
   
     return (
-      // <>
-      //   <label>
-      //   <p>Please Enter your address in the following format.. (Zip Code is optional)<br></br> <em> CITY, STATE ZIP CODE</em></p>
-      //     Address
-      //      <input name="New Address" id ='userAddress' /> {/*onChange={userWeather} */}
-      //   </label>
-      //   <br />
-      //   <button onClick={handleSubmit} id='addressButton'>Submit</button>
-      //   <p><b>Temperature: {weather} (°F)</b></p>
-      // </>
+
       <>
       <Header weather={weather} handleSubmit = {handleSubmit}/>
-      <Reccomend weather={weather}/>
+      <main>
+      <ClothOptions></ClothOptions>
+      </main>
+      <Recomend weather={weather}/>
       </>
-  
     );
   };
 

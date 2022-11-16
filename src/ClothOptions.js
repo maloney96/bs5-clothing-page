@@ -6,26 +6,44 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { hats_json, shirts_json, pants_json, shoes_json } from './ItemsCollection';
+import pictureChange from './pictureChange';
+import { useState } from 'react';
 // import './App.css';
 
-function ClothOptions() {
+const ClothOptions = () => {
+  const [clothItem, setclothItem] = useState('Gucci Hat');
+  const [clothImage, setclothImage] = useState(hats_json['1']['img_url'])
+
+  const dropHandleOnChange = (e) => {
+    setclothItem(e.target.value);
+    setclothImage(hats_json[e.target.value]['img_url']);
+  };
+
+  // const picHandleOnChange = (e) => {
+  //   setclothImage(hats_json['cold']['img_url']);
+  // };
+
+  // https://codesandbox.io/s/jovial-https-x52ps?file=/src/App.js
+
+
   return (
     <Container>
         <Row className = "px-2 my-3">
           <Col sm={7}>
             <Image
-              src = {hats_json['moderate']['img_url']}
+              src = {clothImage}
               fluid
               rounded
+              // onChange = {picHandleOnChange}
             />
           </Col>
           <Col sm={5}>
-            <h2 className = 'font-weight-light'>Cap</h2>
-            <DropdownButton id="dropdown-basic-button" title="Dropdown button">
-                <Dropdown.Item href="#/action-1" value = 'Gucci Hat'>Action</Dropdown.Item>
-                <Dropdown.Item href="#/action-2">Another action</Dropdown.Item>
-                <Dropdown.Item href="#/action-3">Something else</Dropdown.Item>
-            </DropdownButton>
+            <h2 className = 'mt-4'>Cap</h2>
+            <select value={clothItem} onChange = {dropHandleOnChange}>
+                <option href="#/action-1" value='1' id = '1'>Gucci Hat</option>
+                <option href="#/action-2" value='2' id ='2'>Carhartt Hat</option>
+                <option href="#/action-3" value='3' id = '3'>Champion Hat</option>
+            </select>
           </Col>
         </Row>
         <Row className = "px-2 my-3">
@@ -64,6 +82,15 @@ function ClothOptions() {
             <h2 className = 'font-weight-light'>Shoes</h2>
         </Col>
         </Row>
+
+
+        {/* UseEFFECT? */}
+        {/* <script>
+        function myFunction() {
+        var x = document.getElementById("mySelect").value;
+        document.getElementById("demo").innerHTML = "You selected: " + x;
+        }
+      </script> */}
       </Container>
   );
 }

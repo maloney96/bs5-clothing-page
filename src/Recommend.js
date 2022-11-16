@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
-const Reccomend = (props) => {
+const Recomend = (props) => {
   const weather = props.weather
   return (
     <Card className="text-center">
@@ -18,4 +18,4 @@ const Reccomend = (props) => {
   );
 }
 
-export default Reccomend;
+export default Recomend;

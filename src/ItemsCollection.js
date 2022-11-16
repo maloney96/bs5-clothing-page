@@ -1,15 +1,18 @@
 
 
 let hats_json = {
-    'warm': {
+    '1': {
+        'w_type': 'warm',
         'name': 'Gucci Hat',
         'img_url':'https://images.stockx.com/images/Gucci-Original-GG-Canvas-Baseball-Hat-with-Web-Beige-Brown.jpg?fit=fill&bg=FFFFFF&w=576&h=384&fm=avif&auto=compress&dpr=1&trim=color&trimcolor=ffffff&updated_at=1609366522&q=57'
     },
-    'cold': {
+    '2': {
+        'w_type': 'cold',
         'name':'Carhartt Hat',
         'img_url': 'https://m.media-amazon.com/images/I/71DREOUOMlL._AC_UX679_.jpg'
     },
-    'moderate' : {
+    '3' : {
+        'w_type': 'moderate',
         'name': 'Champion Hat',
         'img_url': 'https://scene7.zumiez.com/is/image/zumiez/product_main_medium_2x/Champion-Classic-Twill-White-Strapback-Hat-_297377-front-US.jpg'
     },

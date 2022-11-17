@@ -10,20 +10,18 @@ import pictureChange from './pictureChange';
 import { useState } from 'react';
 // import './App.css';
 
-const ClothOptions = () => {
-  const [clothItem, setclothItem] = useState('Gucci Hat');
-  const [clothImage, setclothImage] = useState(hats_json['1']['img_url'])
+const ClothOptions = (props) => {
+  const clothItem = props.clothItem
+  const clothImage =  props.clothImage 
+  const dropHandleOnChange = props.dropHandleOnChange
 
-  const dropHandleOnChange = (e) => {
-    setclothItem(e.target.value);
-    setclothImage(hats_json[e.target.value]['img_url']);
-  };
+  // const [clothItem, setclothItem] = useState('Gucci Hat');
+  // const [clothImage, setclothImage] = useState(hats_json['1']['img_url'])
 
-  // const picHandleOnChange = (e) => {
-  //   setclothImage(hats_json['cold']['img_url']);
+  // const dropHandleOnChange = (e) => {
+  //   setclothItem(e.target.value);
+  //   setclothImage(hats_json[e.target.value]['img_url']);
   // };
-
-  // https://codesandbox.io/s/jovial-https-x52ps?file=/src/App.js
 
 
   return (

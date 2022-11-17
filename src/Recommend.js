@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 
 const Recomend = (props) => {
   const weather = props.weather
+  const weathButtonHandleOnChange = props.weathButtonHandleOnChange
   return (
     <Card className="text-center">
       <Card.Header>Weather Summary: {weather} (°F)</Card.Header>
@@ -11,7 +12,7 @@ const Recomend = (props) => {
         <Card.Text>
           Hit the button to receive a recommendation on what to wear, based on your location's weather!
         </Card.Text>
-        <Button variant="primary">Generate Reccomendation</Button>
+        <Button onClick={weathButtonHandleOnChange} variant="primary">Generate Reccomendation</Button>
       </Card.Body>
       <Card.Footer className="text-muted">Author: Liam Maloney 2022</Card.Footer>
     </Card>
